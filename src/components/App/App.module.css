@@ -1,0 +1,27 @@
+.vizualizerPanel {
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+}
+
+.codeEditorPanel {
+  height: 100vh;
+  padding: 20px 60px 20px 0;
+}
+
+.drawerButton {
+  z-index: 99999;
+  position: fixed;
+  width: 60px;
+  justify-content: flex-end;
+  align-items: center;
+  height: 68px;
+  right: -18px;
+  font-size: 40px;
+  color: rgb(108, 179, 181);
+  display: flex;
+  top: calc(50vh - 34px);
+}
