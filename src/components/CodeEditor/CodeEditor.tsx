@@ -42,8 +42,8 @@ export function CodeEditor({ runCode }: CodeEditorProps) {
         value={code}
         className={styles.editor}
         placeholder="Code goes here..."
-        height="1000px"
-        maxHeight="1000px"
+        height="70vh"
+        maxHeight="70vh"
         theme={githubLight}
         extensions={[javascript()]}
         onChange={(value): void => {

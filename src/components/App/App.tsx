@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Layout, Row, Space } from 'antd';
+import { Alert, Button, Col, Row, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
 import { CodeError, InputError, runCode } from '../../services/codeInterpreter';
@@ -59,29 +59,26 @@ export function App() {
           />
         </Space>
       )}
-      <Layout>
-        {!snippetsListOpened && (
-          <Button className={styles.drawerButton} onClick={() => toggleSnippetsList()}>
-            <DoubleLeftOutlined />
-          </Button>
-        )}
-        {snippetsListOpened && <SnippetsListDrawer />}
-        <Layout.Content>
-          <Row>
-            <Col span={12} flex={'auto'} style={{ justifyContent: 'center' }}>
-              <div className={styles.vizualizerPanel}>
-                {visualizerStates && <VisualizerView visualizerStates={visualizerStates} />}
-                {!visualizerStates && <HowTo />}
-              </div>
-            </Col>
-            <Col span={12}>
-              <div className={styles.codeEditorPanel}>
-                <CodeEditor runCode={onCodeRun} />
-              </div>
-            </Col>
-          </Row>
-        </Layout.Content>
-      </Layout>
+
+      {!snippetsListOpened && (
+        <Button className={styles.drawerButton} onClick={() => toggleSnippetsList()}>
+          <DoubleLeftOutlined />
+        </Button>
+      )}
+      {snippetsListOpened && <SnippetsListDrawer />}
+      <Row>
+        <Col span={12} flex={'auto'} style={{ justifyContent: 'center' }}>
+          <div className={styles.vizualizerPanel}>
+            {visualizerStates && <VisualizerView visualizerStates={visualizerStates} />}
+            {!visualizerStates && <HowTo />}
+          </div>
+        </Col>
+        <Col span={12}>
+          <div className={styles.codeEditorPanel}>
+            <CodeEditor runCode={onCodeRun} />
+          </div>
+        </Col>
+      </Row>
     </>
   );
 }
